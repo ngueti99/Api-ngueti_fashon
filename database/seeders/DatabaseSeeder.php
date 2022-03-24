@@ -17,6 +17,10 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(10)->create();
         \App\Models\Collect::factory(100)->create();
         \App\Models\Category::factory(100)->create();
-        \App\Models\Brand::factory(100)->create();
+        $this->call(RoleSeeder::class);
+        $this->call(BrandSeeder::class);
+        $this->call(SizeSeeder::class);
+        $this->call(ColorSeeder::class);
+
     }
 }
